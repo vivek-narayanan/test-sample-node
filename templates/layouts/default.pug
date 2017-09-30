@@ -42,7 +42,7 @@ html
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 			//- ... or completely change this header to suit your design.
 
-			div(role="navigation").navbar.navbar-default
+			div(role="navigation")
 				.container-fluid
 					.navbar-header
 						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -54,14 +54,14 @@ html
 					.collapse.navbar-collapse
 						ul.nav.navbar-nav.navbar-left
 							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+								li(class=(section == link.key ? 'active' : null)): a(style={color: 'white'})(href=link.href)= link.label
 						ul.nav.navbar-nav.navbar-right
 							if user
 								if user.canAccessKeystone
-									li: a(href='/keystone') Open Editor
-								li: a(href='/keystone/signout') Sign Out
+									li: a(style={color: 'white'})(href='/keystone') Open Feeds
+								li: a(style={color: 'white'})(href='/keystone/signout') Sign Out
 							else
-								li: a(href='/keystone/signin') Sign In
+								li: a(style={color: 'white'})(href='/keystone/signin') Sign In
 
 		//- BODY
 		#body
