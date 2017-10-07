@@ -9,7 +9,6 @@ block content
 		if galleries.length
 			each gallery in galleries
 				h3= gallery.name
-				//- .row.gallery-images
 				blockquote.embedly-card
 					h4: a(href=gallery.video)
 				script(async='', src='//cdn.embedly.com/widgets/platform.js', charset='UTF-8')
