@@ -4,7 +4,7 @@ mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
 		h2: a(href='/post/' + post.slug)= post.title
 		if post.image.exists
-			img(src=post._.image.fit(305,125)).img.pull-right
+			img(src=post._.image.fit(305,125)).img.pull-left
 		p.lead.text-muted Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
