@@ -5,13 +5,12 @@ mixin post(post)
 		h2: a(href='/post/' + post.slug)= post.title
 		if post.image.exists
 			img(src=post._.image.fit(305,125)).img.pull-left
+		//- p!= post.content.brief
 		p.lead.text-muted Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
 			if post.author
 				| by #{post.author.name.first}
-		
-		//- p!= post.content.brief
 		//- if post.content.extended
 		//- 	p.read-more: a(href='/post/' + post.slug) Read more...
 
