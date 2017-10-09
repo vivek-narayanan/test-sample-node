@@ -8,9 +8,10 @@ block content
 	.container
 		if galleries.length
 			each gallery in galleries
-				h3= gallery.name
-				blockquote.embedly-card
+				blockquote.embedly-card(data-card-controls="0").pull-left
 					h4: a(href=gallery.video)
+				h3= gallery.name
 				script(async='', src='//cdn.embedly.com/widgets/platform.js', charset='UTF-8')
+				
 		else
 			h3.text-muted There are no videos yet.
