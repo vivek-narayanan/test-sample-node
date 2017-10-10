@@ -37,6 +37,16 @@ html
 	body
 
 		//- HEADER
+		#header: .homelogo
+			div(role="logo")
+				.container-header
+					.navbar-header
+						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+							span.icon-bar
+					.collapse.navbar-collapse
+						ul.nav.navbar-nav.navbar-left
+							li: h4(style={color: 'white'}) Whats's Happening?
+
 		#header: .container
 
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
