@@ -45,7 +45,7 @@ html
 							span.icon-bar
 					.collapse.navbar-collapse
 						ul.nav.navbar-nav.navbar-left
-							li: h4(style={color: 'white'}) Whats's Happening?
+							li: h4(style={color: 'white'}) What's Happening?
 
 		#header: .container
 
@@ -70,8 +70,8 @@ html
 								if user.canAccessKeystone
 									li: a(style={color: 'black'})(href='/keystone') Open Discover
 								li: a(style={color: 'black'})(href='/keystone/signout') Sign Out
-							else
-								li: a(style={color: 'black'})(href='/keystone/signin') Sign In
+							//- else
+							//- 	li: a(style={color: 'black'})(href='/keystone/signin') Sign In
 
 		//- BODY
 		#body
