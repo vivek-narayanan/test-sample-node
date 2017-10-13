@@ -74,17 +74,19 @@ html
 							//- 	li: a(style={color: 'black'})(href='/keystone/signin') Sign In
 							else
 								li: h6(class='price')(style={color: 'black'}) BTC/USD
-									div
-										span.price $4913.32
+									div(class="btcwdgt-price" bw-cur="usd")
+											script.
+												(function(b,i,t,C,O,I,N) {
+												window.addEventListener('load',function() {
+												if(b.getElementById(C))return;
+												I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+												I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+												},false)
+												})(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
+
 								li: h6(class='price')(style={color: 'black'}) ETH/USD
 									div
 										span.price $4913.32
-								//- li: a(class='price')(style={color: 'black'})(href="https://price.bitcoin.com/") BTC/USD
-								//- 	div
-								//- 		span.price $4913.32
-								//- li: a(class='price')(style={color: 'black'})(href="https://price.bitcoin.com/") ETH/USD
-								//- 	div
-								//- 		span.price $4913.32
 								
 
 		//- BODY
