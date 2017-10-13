@@ -74,19 +74,30 @@ html
 							//- 	li: a(style={color: 'black'})(href='/keystone/signin') Sign In
 							else
 								li: h6(class='price')(style={color: 'black'}) BTC/USD
-									div(class="btcwdgt-price" bw-cur="usd")
+									div(id="btcwdgt-price")
 											script.
-												(function(b,i,t,C,O,I,N) {
-												window.addEventListener('load',function() {
-												if(b.getElementById(C))return;
-												I=b.createElement(i),N=b.getElementsByTagName(i)[0];
-												I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
-												},false)
-												})(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
-
+												var xmlhttp = new XMLHttpRequest();
+												xmlhttp.onreadystatechange = function(){
+													if(this.readyState == 4 && this.status == 200){
+														var myObj = JSON.parse(this.responseText);
+														document.getElementById("btcwdgt-price").innerHTML = '$'+myObj.last;
+													}
+												};
+												xmlhttp.open("GET", "https://www.bitstamp.net/api/ticker/", true);
+												xmlhttp.send();
+											
 								li: h6(class='price')(style={color: 'black'}) ETH/USD
-									div
-										span.price $4913.32
+									div(id="ether-price")
+										script.
+												var xmlhttp = new XMLHttpRequest();
+												xmlhttp.onreadystatechange = function(){
+													if(this.readyState == 4 && this.status == 200){
+														var myObj = JSON.parse(this.responseText);
+														document.getElementById("ether-price").innerHTML = '$'+myObj[0].price_usd;
+													}
+												};
+												xmlhttp.open("GET", "https://api.coinmarketcap.com/v1/ticker/ethereum/", true);
+												xmlhttp.send();
 								
 
 		//- BODY
