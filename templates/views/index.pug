@@ -1,5 +1,17 @@
 extends ../layouts/default
 
+mixin featured(post)
+	.featured(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+		if post.image.exists
+			img(src=post._.image.fit(900,450)).img.pull-left
+		h2(class='headline'): a(href='/post/' + post.slug)= post.title
+		//- p!= post.content.brief
+		p.lead.text Posted 
+			if post.publishedDate
+				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
+			if post.author
+				| by #{post.author.name.first}
+
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
 		h2: a(href='/post/' + post.slug)= post.title
@@ -23,7 +35,10 @@ block content
 				if data.posts.results.length
 					.blog
 						each post in data.posts.results
-							+post(post)
+							if post.author.name.last == 'headline'
+								+featured(post)
+							else
+								+post(post)
 					
 					if data.posts.totalPages > 1
 						ul.pagination
