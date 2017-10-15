@@ -12,6 +12,18 @@ mixin featured(post)
 			if post.author
 				| by #{post.author.name.first}
 
+mixin mostShared(post)
+	.mostShared(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+		if post.image.exists
+			img(src=post._.image.fit(300,150)).img.pull-left
+		h2(class='mostShared'): a(href='/post/' + post.slug)= post.title
+		//- p!= post.content.brief
+		p.mostShared Posted 
+			if post.publishedDate
+				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
+			if post.author
+				| by #{post.author.name.first}
+
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
 		h2: a(href='/post/' + post.slug)= post.title
@@ -38,7 +50,10 @@ block content
 							if post.author.name.last == 'headline'
 								+featured(post)
 						each post in data.posts.results
-							if post.author.name.last != 'headline'
+							if post.author.name.last == 'mostShared'
+								+mostShared(post)
+						each post in data.posts.results
+							if post.author.name.last != 'headline' && post.author.name.last != 'mostShared'
 								+post(post)
 					
 					if data.posts.totalPages > 1
