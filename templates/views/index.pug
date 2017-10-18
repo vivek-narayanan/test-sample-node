@@ -16,7 +16,7 @@ mixin mostShared(post)
 	.col-md-6.col-md-6
 		.mostShared(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
 			if post.image.exists
-				img(src=post._.image.fit(300,150)).img.pull-left
+				img(src=post._.image.fit(470,250)).img.pull-left
 			h2(class='mostShared'): a(href='/post/' + post.slug)= post.title
 			//- p!= post.content.brief
 			p.mostShared Posted 
