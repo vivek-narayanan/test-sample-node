@@ -8,10 +8,17 @@ block content
 	.container
 		if galleries.length
 			each gallery in galleries
-				blockquote.embedly-card(data-card-controls="0").pull-left
-					h4: a(href=gallery.video)
-				h3= gallery.name
-				script(async='', src='//cdn.embedly.com/widgets/platform.js', charset='UTF-8')
+				//- blockquote.embedly-card(data-card-align="left")
+				//- 	h4 
+				//- 		a(href=gallery.video) (null)
+				//- 	p (null)
+				//- h3= gallery.name
+				//- script(async='', src='//cdn.embedly.com/widgets/platform.js', charset='UTF-8')
+
+				blockquote.embedly-card(data-card-key="abf2322c805740f0a2d46274964d65b2",data-card-align="left")
+					h4
+						a(href=gallery.video)
+				script(async="", src="//cdn.embedly.com/widgets/platform.js", charset="UTF-8")
 				
 		else
 			h3.text-muted There are no videos yet.
