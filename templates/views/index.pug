@@ -3,7 +3,7 @@ extends ../layouts/default
 mixin featured(post)
 	.featured(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
 		if post.image.exists
-			img(src=post._.image.fit(1000,450)).img-responsive
+			img(src=post._.image.fit(auto,auto)).img-fluid
 		h2(class='headline'): a(href='/post/' + post.slug)= post.title
 		//- p!= post.content.brief
 		p.lead.text Posted 
