@@ -97,6 +97,11 @@ img{
 	vertical-align: top;
 	position: relative;
 }
+@media (max-width: 600px) {
+	img {
+		width: 100%; // Override width to show only one image in a row on smaller screens
+	}
+}
 
 p.lead.text-muted {
     color: #aaa !important;
