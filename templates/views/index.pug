@@ -14,9 +14,9 @@ mixin featured(post)
 
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h2: a(href='/post/' + post.slug)= post.title
 		if post.image.exists
 			img(src=post._.image.fit(355,125)).img.pull-left
+		h2: a(href='/post/' + post.slug)= post.title
 		//- p!= post.content.brief
 		p.lead.text-muted Posted 
 			if post.publishedDate
