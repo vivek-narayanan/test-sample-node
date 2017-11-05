@@ -158,12 +158,6 @@ a{
 @media (max-width:700px){
 	p.lead.text-muted {
 		display: none;
-		// margin-left: 5%;
-		// margin-right: 5%;
-		// color: #aaa !important;
-		// font-size: 12px;
-		// margin-bottom: auto;
-		// letter-spacing: .1px;
 	}
 }
 
@@ -240,13 +234,19 @@ img.img-fluid {
 	}
 }
 
-
-p.lead.text {
-    color: #aaa !important;
-    font-size: 14px;
-    margin-bottom: auto;
-    letter-spacing: .1px;
-    padding-left: 25px;
+@media (min-width:701px){
+	p.lead.text {
+		color: #aaa !important;
+		font-size: 14px;
+		margin-bottom: auto;
+		letter-spacing: .1px;
+		padding-left: 25px;
+	}	
+}
+@media (max-width:700px){
+	p.lead.text{
+		display: none;
+	}	
 }
 
 .col-md-6.col-md-6{
