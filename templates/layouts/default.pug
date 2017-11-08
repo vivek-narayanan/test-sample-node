@@ -17,6 +17,10 @@ html
 		//- All .less files will be automatically compiled and minified in production.
 		link(href="/styles/site.min.css", rel="stylesheet")
 		
+		//- Scripts to get the Bitcoin & Ether Price
+		script(src="/js/jquery/bitcoin-price.js")
+		script(src='/js/jquery/ether-price.js')
+
 		//- Script to add Active class
 		script(src="http://code.jquery.com/jquery-2.1.4.min.js")
 		script.
@@ -83,49 +87,13 @@ html
 							else
 								li: h6(class='price')(style={color: 'black'}) BTC/USD
 									div(id="btcwdgt-price")
-											script.
-												var xmlhttp = new XMLHttpRequest();
-												xmlhttp.onreadystatechange = function(){
-													if(this.readyState == 4 && this.status == 200){
-														var myObj = JSON.parse(this.responseText);
-														var percent_change = myObj[0].percent_change_24h+'%';
-														var final;
-														if(myObj[0].percent_change_24h.charAt() == '-'){
-															final = percent_change.fontcolor("red");
-														}
-														else{
-															percent_change = '+'+ percent_change;
-															final = percent_change.fontcolor("green");															
-														}
-														document.getElementById("btcwdgt-price").innerHTML = '$'+myObj[0].price_usd+' '+final;	
-													}
-												};
-												xmlhttp.open("GET", "https://api.coinmarketcap.com/v1/ticker/bitcoin/", true);
-												xmlhttp.send();
-																							
+										script.
+											bitPrice();										
 								li: h6(class='price')(style={color: 'black'}) ETH/USD
 									div(id="ether-price")
 										script.
-												var xmlhttp = new XMLHttpRequest();
-												xmlhttp.onreadystatechange = function(){
-													if(this.readyState == 4 && this.status == 200){
-														var myObj = JSON.parse(this.responseText);
-														var percent_change = myObj[0].percent_change_24h+'%';
-														var final;
-														if(myObj[0].percent_change_24h.charAt() == '-'){
-															final = percent_change.fontcolor("red");
-														}
-														else{
-															percent_change = '+'+ percent_change;
-															final = percent_change.fontcolor("green");								
-														}
-														document.getElementById("ether-price").innerHTML = '$'+myObj[0].price_usd+' '+final;
-													}
-												};
-												xmlhttp.open("GET", "https://api.coinmarketcap.com/v1/ticker/ethereum/", true);
-												xmlhttp.send();
-								
-
+											etherPrice();
+											
 		//- BODY
 		#body
 
