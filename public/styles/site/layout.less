@@ -13,9 +13,6 @@
 		border-bottom: 1px solid #e6ecf0;
 		color: inherit;	
 	}
-	img.logo.pull-left {
-		padding-top: 2%;
-	}
 }
 
 #footer {
@@ -262,10 +259,16 @@ li.active {
 	border-left: 1px solid #e6ecf0;
 }
 
-img.logo.pull-left{
-	margin-top: 1px;
+@media (max-width: 700px){
+	img.logo.pull-left{
+		margin-top: 1%;
+	}
 }
-
+@media (min-width: 701px){
+	img.logo.pull-left{
+		margin-top: 1px;
+	}
+}
 div#btcwdgt-price,div#ether-price {
 	font-size: 14px;
 	margin-top: inherit;
@@ -364,6 +367,9 @@ img.img-fluid {
 		padding-left: 0;
 		padding-right: 0;
 	}
+}
+.navbar-toggle{
+	margin-top: 0.5%;
 }
 .navbar-default {
     background-color: transparent;
