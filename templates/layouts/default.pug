@@ -19,7 +19,9 @@ html
 		
 		//- Scripts to get the Bitcoin & Ether Price
 		script(src="/js/jquery/bitcoin-price.js")
+		script(src="/js/jquery/bitcoin-price-small.js")
 		script(src='/js/jquery/ether-price.js')
+		script(src="/js/jquery/ether-price-small.js")
 
 		//- Script to add Active class
 		script(src="http://code.jquery.com/jquery-2.1.4.min.js")
@@ -65,13 +67,13 @@ html
 							
 			img(class='logo')(src='/bitcoin.png').pull-left
 			h6.display-price(class='price')(style={color: 'black'}).pull-left BTC/USD
-				div(id="btcwdgt-price")
+				div(id="btcwdgt-price-small")
 					script.
-						bitPrice();										
+						bitSmall();									
 			h6.display-price(class='price')(style={color: 'black'}).pull-left ETH/USD
-				div(id="ether-price")
+				div(id="ether-price-small")
 					script.
-						etherPrice();
+						etherSmall();
 			nav(class="navbar navbar-default")
 				.container-fluid
 					.navbar-header
