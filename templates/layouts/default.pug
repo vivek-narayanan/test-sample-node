@@ -85,11 +85,11 @@ html
 							//- else
 							//- 	li: a(style={color: 'black'})(href='/keystone/signin') Sign In
 							else
-								li: h6(class='price')(style={color: 'black'}) BTC/USD
+								li.hidden-xs: h6(class='price')(style={color: 'black'}) BTC/USD
 									div(id="btcwdgt-price")
 										script.
 											bitPrice();										
-								li: h6(class='price')(style={color: 'black'}) ETH/USD
+								li.hidden-xs: h6(class='price')(style={color: 'black'}) ETH/USD
 									div(id="ether-price")
 										script.
 											etherPrice();
