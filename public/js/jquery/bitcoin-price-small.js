@@ -15,7 +15,7 @@ function bitSmall(){
                 percent_change = '+'+ percent_change;
                 final = percent_change.fontcolor("green");															
             }
-            document.getElementById("btcwdgt-price-small").innerHTML = '$'+myObj[0].price_usd+' '+final;	
+            document.getElementById("btcwdgt-price-small").innerHTML = '$'+myObj[0].price_usd;	
         }
     };
     xmlhttp.open("GET", "https://api.coinmarketcap.com/v1/ticker/bitcoin/", true);
