@@ -2,7 +2,7 @@
 	#header {
 		width: 100%;
 		background-color: #fff;
-		border-bottom: 1px solid #e6ecf0;
+		// border-bottom: 1px solid #e6ecf0;
 		color: inherit;	
 	}
 }
@@ -25,6 +25,20 @@
 	color: #777777;
 }
 
+@media (max-width: 700px){
+	.container,.container-fluid,nav.navbar.navbar-default,.navbar-collapse.collapse {
+		height: auto;
+	}
+}
+@media (min-width: 701px){
+	.container,.container-fluid,nav.navbar.navbar-default,.navbar-collapse.collapse {
+		height: 42px;
+	}
+}
+
+.navbar{
+	margin-bottom: 0px;
+}
 @media (min-width:701px){
 	.container-header {
 		width: 100%;
@@ -337,6 +351,13 @@ img.img-fluid {
 		padding-right: 0;
 	}
 }
-
-
-
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+nav.navbar.navbar-default{
+	border-top-width: 0px;
+}
+// .navbar{
+// 	min-height: unset;
+// }
