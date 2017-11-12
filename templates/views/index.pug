@@ -39,7 +39,7 @@ block content
 								+featured(post)
 					
 						each post in data.posts.results
-							if post.author.name.last != 'headline' && post.author.name.last != 'mostShared'
+							if post.author.name.last != 'headline'
 								+post(post)
 					
 					if data.posts.totalPages > 1
