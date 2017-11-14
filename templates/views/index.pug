@@ -9,8 +9,10 @@ mixin featured(post)
 		p.lead.text Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
-			if post.author
-				| by #{post.author.name.first}
+			if post.publisher
+				| by #{post.publisher}
+			//- else if post.author
+			//- 	| by #{post.author.name.first}
 
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
@@ -21,8 +23,10 @@ mixin post(post)
 		p.lead.text-muted Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
-			if post.author
-				| by #{post.author.name.first}
+			if post.publisher
+				| by #{post.publisher}
+			//- else if post.author
+			//- 	| by #{post.author.name.first}
 		//- if post.content.extended
 		//- 	p.read-more: a(href='/post/' + post.slug) Read more...
 
