@@ -5,30 +5,22 @@ mixin featured(post)
 		if post.image.exists
 			img(src=post._.image.fit(1000,450)).img-fluid
 		h2(class='headline'): a(href='/post/' + post.slug)= post.title
-		//- p!= post.content.brief
 		p.lead.text Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
-			if post.publisher
-				| by #{post.publisher}
-			//- else if post.author
-			//- 	| by #{post.author.name.first}
+			if post.postedby
+				| by #{post.postedby}
 
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
 		if post.image.exists
 			img(src=post._.image.fit(355,125)).img.pull-left
 		h2: a(href='/post/' + post.slug)= post.title
-		//- p!= post.content.brief
 		p.lead.text-muted Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
-			if post.publisher
-				| by #{post.publisher}
-			//- else if post.author
-			//- 	| by #{post.author.name.first}
-		//- if post.content.extended
-		//- 	p.read-more: a(href='/post/' + post.slug) Read more...
+			if post.postedby
+				| by #{post.postedby}
 
 block content
 	.container: .row
