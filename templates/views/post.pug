@@ -12,8 +12,8 @@ block content
 					h5 Posted 
 						if data.post.publishedDate
 							| on #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
-						if data.post.author
-							| by #{data.post.author.name.first}
+						if data.post.postedby
+							| by #{data.post.postedby}
 				.news
 					if data.post.image.exists
 						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
