@@ -1,11 +1,12 @@
 extends ../layouts/default
 
-block content
+block content	
 	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
 		article
 			if !data.post
 				h2 Invalid Post.
 			else
+				title= title || data.post.title
 				header
 					h1= data.post.title
 					h5 Posted 
