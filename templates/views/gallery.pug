@@ -7,6 +7,7 @@ extends ../layouts/default
 block content
 	.container
 		if galleries.length
+			title= title || 'Videos On BitOriginals '
 			each gallery in galleries
 				.video
 					blockquote.embedly-card(data-card-key="abf2322c805740f0a2d46274964d65b2",data-card-align="left")

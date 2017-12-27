@@ -38,6 +38,7 @@ block content
 			if filters.category && !data.category
 				h3.text-muted Invalid Category.
 			else
+				title= title || 'Bitcoin News - The latest news and information on bitcoin'
 				if data.posts.results.length
 					.blog
 						each post in data.posts.results
